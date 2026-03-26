@@ -1,0 +1,244 @@
+:root{
+    --bg:#0a0a0f;
+    --card:#12121a;
+    --accent:#ffe15d;
+    --accent2:#ff5e00;
+    --text:#ffffff;
+    --soft:#9aa0a6;
+}
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    /* background:linear-gradient(135deg,#0f0f1a,#1a1a2e); */
+    color:var(--text);
+    background:radial-gradient(circle at center, #0a0a0f 0%, #050507 100%);
+}
+
+/* NAV */
+.nav{
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:20px 10%;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(10px);
+}
+
+
+.menu{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+.menu a{
+    color:var(--soft);
+    text-decoration:none;
+}
+
+.menu a:hover{
+    color:var(--accent);
+}
+
+/* HERO */
+
+.typing {
+  width: 20ch; /* text length ke hisaab se adjust karo */
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white;
+
+  font-size: 28px;
+  font-family: monospace;
+
+  animation: typing 3s steps(22), blink 0.5s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 22ch;
+  }
+}
+
+/* Cursor blinking */
+/* @keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+} */
+
+
+
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:radial-gradient(circle at center, #0a0a0f 0%, #050507 100%);
+    position:relative;
+    overflow:hidden;
+}
+
+/* glowing background effect */
+.hero::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle, var(--accent), transparent 70%);
+    filter:blur(120px);
+    opacity:0.3;
+    animation:moveGlow 8s infinite alternate;
+}
+
+@keyframes moveGlow{
+    0%{ transform:translate(-100px,-100px);}
+    100%{ transform:translate(100px,100px);}
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:5rem;
+    line-height:1.2;
+}
+
+.hero span{
+    background:linear-gradient(45deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    margin-top:15px;
+    color:var(--soft);
+    font-size:19px;
+    overflow: visible;
+    margin-bottom: 30px;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:25px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,var(--accent),var(--accent2));
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px var(--accent);
+    font-weight: 800;
+}
+
+/* SECTION */
+.section{
+    padding:100px 10%;
+    text-align:center;
+}
+
+/* SKILLS */
+.skill{
+    margin:20px 0;
+    text-align:left;
+    
+}
+
+.bar{
+    height:6px;
+    background:#333;
+}
+
+.bar div{
+    height:6px;
+     background:linear-gradient(45deg,var(--accent),var(--accent2));
+}
+
+/* WORK */
+.work{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.card{
+    padding:20px;
+    background:var(--card);
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+     background:linear-gradient(45deg,var(--accent),var(--accent2));
+}
+
+/* FORM */
+.form{
+    max-width:400px;
+    margin:auto;
+}
+
+.form input,
+.form textarea{
+    width:100%;
+    margin:10px 0;
+    padding:12px;
+    background:#111;
+    border:1px solid #333;
+    color:white;
+    border-radius:6px;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:20px 10%;
+    background:#050507;
+    border-top:1px solid #1f1f1f;
+}
+
+.footer p{
+    color:var(--soft);
+    font-size:14px;
+}
+
+
+
+#hero-typing {
+  color: var(--accent-color);
+  border-right: 2px solid var(--accent-color);
+  padding-right: 5px;
+
+  display: inline-block;
+  white-space: normal;
+  overflow: hidden;
+
+  font-size: 20px; /* adjust if needed */
+  line-height: 1; /* IMPORTANT */
+
+  animation: blink 0.7s infinite;
+}
